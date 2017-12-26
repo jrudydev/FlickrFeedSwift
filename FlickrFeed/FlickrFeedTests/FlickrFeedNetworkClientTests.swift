@@ -56,7 +56,7 @@ class FlickrFeedNetworkClientTests: XCTestCase {
         }
     }
     
-    func testNetworkClientParseJSON() {
+    func testNetworkClientParseJSONDictionary() {
         let jsonData = NSKeyedArchiver.archivedData(
             withRootObject: FlickrFeedNetworkClientTests.item1NetworkResult)
         
@@ -67,10 +67,43 @@ class FlickrFeedNetworkClientTests: XCTestCase {
                 return
             }
             
-            let resultItem = (result as? NSDictionary)!
-            let mockItem = FlickrFeedNetworkClientTests.item1NetworkResult
+            guard let dicationary = result as? NSDictionary else {
+                let error = PhotoServiceError.JSONStructure.localizedDescription
+                XCTAssert(true, "Error parsing data\(error)")
+                return
+            }
+            let mockDictionary = FlickrFeedNetworkClientTests.item1NetworkResult
             
-            XCTAssert(resultItem == mockItem, "Values do not match")
+            XCTAssert(dicationary == mockDictionary, "Values do not match")
+        }
+    }
+    
+    func testNetworkClientParseJSONArray() {
+        let jsonArray: NSArray = [
+            FlickrFeedNetworkClientTests.item1NetworkResult,
+            FlickrFeedNetworkClientTests.item2NetworkResult
+        ]
+        let jsonData = NSKeyedArchiver.archivedData(withRootObject: jsonArray)
+        
+        networkClient.parseJSON(data: jsonData as NSData) {
+            (result, error) in
+            if let error = error {
+                XCTAssert(true, "Error parsing data\(error.localizedDescription)")
+                return
+            }
+            
+            guard let array = result as? NSArray,
+                array.count == jsonArray.count else {
+                let error = PhotoServiceError.JSONStructure.localizedDescription
+                XCTAssert(true, "Error parsing data\(error)")
+                return
+            }
+            let dictionary1 = array[0] as! NSDictionary
+            let dictionary2 = array[1] as! NSDictionary
+            let mockDictionary = FlickrFeedNetworkClientTests.item1NetworkResult
+            
+            XCTAssert(dictionary1 == mockDictionary, "Values do not match")
+            XCTAssert(dictionary2 != mockDictionary, "Values match")
         }
     }
     
@@ -81,8 +114,8 @@ class FlickrFeedNetworkClientTests: XCTestCase {
             completion(FlickrFeedNetworkClientTests.item1NetworkResult, nil)
         }
         
-        override func parseJSON(data:NSData, completion: @escaping NetworkResult) {
-            completion(FlickrFeedNetworkClientTests.item1NetworkResult, nil)
+        override func parseJSON(data: NSData, completion: @escaping NetworkResult) {
+            completion(data, nil)
         }
     }
     
