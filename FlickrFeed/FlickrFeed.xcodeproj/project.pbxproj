@@ -20,6 +20,8 @@
 		93003C1E1FEDBCAC00D315E8 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93003C1C1FEDBCAC00D315E8 /* NetworkClient.swift */; };
 		93003C201FEDE41000D315E8 /* FlickrFeedNetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93003C1F1FEDE41000D315E8 /* FlickrFeedNetworkClientTests.swift */; };
 		9330DF621FF1ECBA000CBF7B /* FlickrFeedPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330DF611FF1ECBA000CBF7B /* FlickrFeedPhotoTests.swift */; };
+		93EB17291FF293CA00C87C46 /* Photo+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EB17281FF293CA00C87C46 /* Photo+Services.swift */; };
+		93EB172A1FF2973D00C87C46 /* Photo+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EB17281FF293CA00C87C46 /* Photo+Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		93003C1C1FEDBCAC00D315E8 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		93003C1F1FEDE41000D315E8 /* FlickrFeedNetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFeedNetworkClientTests.swift; sourceTree = "<group>"; };
 		9330DF611FF1ECBA000CBF7B /* FlickrFeedPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFeedPhotoTests.swift; sourceTree = "<group>"; };
+		93EB17281FF293CA00C87C46 /* Photo+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Services.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,7 @@
 			children = (
 				93003C191FE8A72200D315E8 /* Photo.swift */,
 				93003C1C1FEDBCAC00D315E8 /* NetworkClient.swift */,
+				93EB17281FF293CA00C87C46 /* Photo+Services.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -297,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93EB17291FF293CA00C87C46 /* Photo+Services.swift in Sources */,
 				93003C1A1FE8A72200D315E8 /* Photo.swift in Sources */,
 				93003BEB1FE89EBC00D315E8 /* ViewController.swift in Sources */,
 				93003BE91FE89EBC00D315E8 /* AppDelegate.swift in Sources */,
@@ -310,6 +315,7 @@
 			files = (
 				93003C1B1FE8A72200D315E8 /* Photo.swift in Sources */,
 				93003BFE1FE89EBD00D315E8 /* FlickrFeedTests.swift in Sources */,
+				93EB172A1FF2973D00C87C46 /* Photo+Services.swift in Sources */,
 				93003C1E1FEDBCAC00D315E8 /* NetworkClient.swift in Sources */,
 				9330DF621FF1ECBA000CBF7B /* FlickrFeedPhotoTests.swift in Sources */,
 				93003C201FEDE41000D315E8 /* FlickrFeedNetworkClientTests.swift in Sources */,

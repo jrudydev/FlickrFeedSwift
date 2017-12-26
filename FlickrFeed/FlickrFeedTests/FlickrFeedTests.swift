@@ -10,6 +10,7 @@ import XCTest
 @testable import FlickrFeed
 
 class FlickrFeedTests: XCTestCase {
+    var photos: [MockPhotoServices]?
     
     override func setUp() {
         super.setUp()
@@ -19,6 +20,18 @@ class FlickrFeedTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testGetAllPhotos() {
+        
+    }
+    
+    class MockPhotoServices: Photo {
+        
+//        override class func getAllFeedPhotos(completion: @escaping PhotoResult) {
+//
+//        }
+        
     }
     
 }
