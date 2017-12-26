@@ -1,2 +1,2 @@
 # FlickrFeedSwift
-This application was created in part for interview preparation. The goal is to follow a Test-Driven Development methodology.
+The goal of this project is to parallel an Objective-C iOS app using a Test-Driven Development methodology.
