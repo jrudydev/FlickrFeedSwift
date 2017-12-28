@@ -122,7 +122,7 @@ class FlickrFeedNetworkClientTests: XCTestCase {
     //    class MockURLSessionDataTask: URLSessionDataTask {
     //        var didResume = false
     //
-    //        override func dataTask(url: NSURL) ->
+    //        override func dataTask(url: URL) ->
     //    }
     //
     //    class MockURLSession: URLSession {
