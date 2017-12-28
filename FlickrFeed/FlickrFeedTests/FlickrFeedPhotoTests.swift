@@ -14,7 +14,7 @@ let FlickrFeedPhotoTestsPhotoUrl = "http://www.example.com?a=b&c=d"
 
 class FlickrFeedPhotoTests: XCTestCase {
     var values1: Dictionary<String, Any> = [:]
-    var values3: Dictionary<String, Any> = [:]
+    var values2: Dictionary<String, Any> = [:]
     
     override func setUp() {
         super.setUp()
@@ -25,7 +25,7 @@ class FlickrFeedPhotoTests: XCTestCase {
                 FlickrFeedPhotoMKey: FlickrFeedPhotoTestsPhotoUrl
             ]
         ]
-        self.values3 = [
+        self.values2 = [
             FlickrFeedPhotoLinkKey: FlickrFeedPhotoTestsItemId2,
             FlickrFeedPhotoMediaKey: [
                 FlickrFeedPhotoMKey: FlickrFeedPhotoTestsPhotoUrl
@@ -54,7 +54,7 @@ class FlickrFeedPhotoTests: XCTestCase {
     func testPhotoEquality() {
         let photo1 = Photo(dictionary:values1 as NSDictionary)
         let photo2 = Photo(dictionary:values1 as NSDictionary)
-        let photo3 = Photo(dictionary:values3 as NSDictionary)
+        let photo3 = Photo(dictionary:values2 as NSDictionary)
         XCTAssert(photo1 == photo2)
         XCTAssert(photo1 != photo3)
     }
