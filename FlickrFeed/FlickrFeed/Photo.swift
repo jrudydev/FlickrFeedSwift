@@ -14,7 +14,7 @@ let FlickrFeedPhotoMKey = "m"
 
 class Photo: NSObject {
     var itemId: String
-    var photoUrl: NSURL
+    var photoUrl: URL
     var favorite = false
     
     static let itemIdKey = "itemId"
@@ -29,7 +29,7 @@ class Photo: NSObject {
         
         guard let media = values[FlickrFeedPhotoMediaKey] as? NSDictionary,
             let urlString = media[FlickrFeedPhotoMKey] as? String,
-            let url = NSURL(string:urlString) else {
+            let url = URL(string:urlString) else {
             fatalError("Photo item could not be created" + values.description)
         }
         photoUrl = url
